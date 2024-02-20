@@ -36,6 +36,10 @@
 - swicthport access vlan 300
 - exit
 
+---
+
+- do wr
+
 ### Mode Trunk
 - switchport  trunk allowed vlan 100,200,300
 
