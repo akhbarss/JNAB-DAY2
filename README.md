@@ -12,7 +12,7 @@
 #### VLAN 400
 - Name : marketing
 - Range Ethernet : FastEthernet0/9-16
-- Network : 200.200.100.0/24
+- Network : 200.200.200.0/24
 
 
 # Emplementasi 
@@ -54,17 +54,16 @@ Lalu konfigurasi mode trunk nya.
 - switchport trunk allowed vlan 100,200,300
 
 ### 2. KONFIGURASI ROUTER
-- interface fa0/0.100
-- encapsulation dot1Q 100
-- ip address 192.168.100.1 255.255.255.0
-- exit
----
-- interface fa0/0.200
-- encapsulation dot1Q 200
-- ip address 192.168.200.1 255.255.255.0
-- exit
----
-- interface ( fa0/0.300  / fa0/0.210 )
+- enable
+- conf t
+- interface fa0/0.300
 - encapsulation dot1Q 300
-- ip address 192.168.210.1 255.255.255.0
+- ip address 200.200.100.1 255.255.255.0
 - exit
+---
+- interface fa0/0.400
+- encapsulation dot1Q 400
+- ip address 200.200.200.1 255.255.255.0
+- exit
+---
+- do wr
