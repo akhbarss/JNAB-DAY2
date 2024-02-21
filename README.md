@@ -1,10 +1,23 @@
 # KONFIGURASI VLAN
 
-![alt text](https://github.com/akhbarss/JNAB-DAY2/blob/main/public/konfigurasi-vlan.jpg?raw=true)
+![alt text](https://github.com/akhbarss/JNAB-DAY2/blob/main/public/konfigurasi-vlan-image.jpg?raw=true)
 
-## 1. Konfigurasi Switch
+# Ketentuan
 
-### bagian 1
+#### VLAN 300
+- Name : produksi
+- Range Ethernet : FastEthernet0/1-8
+- Network : 200.200.100.0/24
+
+#### VLAN 400
+- Name : marketing
+- Range Ethernet : FastEthernet0/9-16
+- Network : 200.200.100.0/24
+
+
+# Emplementasi 
+### 1. Konfigurasi Switch
+Menambah vlan id pada switch pertama.
 
 - enable
 - conf t
@@ -16,8 +29,8 @@
 - name keuangan
 - exit
 
-### Mode Access
-- masuk menu config ( conf t )
+Lalu konfigurasi access nya.
+- masuk menu config ( conf t ) , jika belum
 ---
 - interface range fa0/1-8
 - switchport mode access
@@ -35,11 +48,12 @@
 - exit
 ---
 - do wr
-
-### Mode Trunk
+---
+Lalu konfigurasi mode trunk nya.
+- switchport mode trunk
 - switchport trunk allowed vlan 100,200,300
 
-## 2. KONFIGURASI ROUTER
+### 2. KONFIGURASI ROUTER
 - interface fa0/0.100
 - encapsulation dot1Q 100
 - ip address 192.168.100.1 255.255.255.0
