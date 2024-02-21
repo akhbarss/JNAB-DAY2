@@ -21,12 +21,10 @@ Menambah vlan id pada switch pertama.
 
 - enable
 - conf t
-- vlan 100
-- name marketing
-- vlan 200
-- name produksi
 - vlan 300
-- name keuangan
+- name produksi
+- vlan 400
+- name marketing
 - exit
 
 Lalu konfigurasi access nya.
