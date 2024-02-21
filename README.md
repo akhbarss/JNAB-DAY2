@@ -16,7 +16,25 @@
 
 
 # Emplementasi 
-### 1. Konfigurasi Switch
+### 1. KONFIGURASI ROUTER
+- enable
+- conf t
+- interface fa0/0.300
+- encapsulation dot1Q 300
+- ip address 200.200.100.1 255.255.255.0
+- exit
+---
+- interface fa0/0.400
+- encapsulation dot1Q 400
+- ip address 200.200.200.1 255.255.255.0
+- exit
+---
+- interface fa0/0
+- no shutdown
+- exit
+- do wr
+
+### 2. Konfigurasi Switch 1
 Menambah vlan id pada switch pertama.
 
 - enable
@@ -32,36 +50,46 @@ Lalu konfigurasi access nya.
 ---
 - interface range fa0/1-8
 - switchport mode access
-- switchport access vlan 100
+- switchport access vlan 300
 - exit
 ---
 - interface range fa0/9-16
 - switchport mode access
-- switchport access vlan 200
+- switchport access vlan 400
 - exit
 ---
-- interface range fa0/17-24
+Lalu konfigurasi mode trunk nya.
+- interface gigabitEthernet 0/1
+- switchport mode trunk
+- switchport trunk allowed vlan 300,400
+- exit
+- do wr
+
+### 3. Konfigurasi Switch 2
+Menambah vlan id pada switch kedua.
+
+- enable
+- conf t
+- vlan 300
+- name produksi
+- vlan 400
+- name marketing
+- exit
+---
+Lalu konfigurasi access nya.
+- interface range fa0/1-8
 - switchport mode access
 - switchport access vlan 300
 - exit
 ---
-- do wr
+- interface range fa0/9-16
+- switchport mode access
+- switchport access vlan 400
+- exit
 ---
 Lalu konfigurasi mode trunk nya.
+- interface gigabitEthernet 0/1
 - switchport mode trunk
-- switchport trunk allowed vlan 100,200,300
-
-### 2. KONFIGURASI ROUTER
-- enable
-- conf t
-- interface fa0/0.300
-- encapsulation dot1Q 300
-- ip address 200.200.100.1 255.255.255.0
+- switchport trunk allowed vlan 300,400
 - exit
----
-- interface fa0/0.400
-- encapsulation dot1Q 400
-- ip address 200.200.200.1 255.255.255.0
-- exit
----
 - do wr
