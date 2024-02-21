@@ -1,6 +1,6 @@
 # KONFIGURASI VLAN
 
-![alt text](https://github.com/akhbarss/JNAB-DAY2/blob/main/public/konfigurasi-vlan-image.jpg?raw=true)
+![alt text](https://github.com/akhbarss/Konfigurasi-VLAN/blob/main/public/konfigurasi-vlan.jpg?raw=true)
 
 # Ketentuan
 
