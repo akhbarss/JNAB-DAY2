@@ -1,6 +1,6 @@
 # KONFIGURASI VLAN
 
-![alt text](?raw=true)
+![alt text](https://github.com/akhbarss/JNAB-DAY2/blob/main/public/konfigurasi-vlan.jpg?raw=true)
 
 ## 1. Konfigurasi Switch
 
