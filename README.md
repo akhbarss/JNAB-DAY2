@@ -1,5 +1,7 @@
 # KONFIGURASI VLAN
 
+![alt text](?raw=true)
+
 ## 1. Konfigurasi Switch
 
 ### bagian 1
