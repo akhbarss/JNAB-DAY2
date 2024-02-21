@@ -18,30 +18,24 @@
 - masuk menu config ( conf t )
 ---
 - interface range fa0/1-8
-- swicthport mode access
-- swicthport access vlan 100
+- switchport mode access
+- switchport access vlan 100
 - exit
-
 ---
-
 - interface range fa0/9-16
-- swicthport mode access
-- swicthport access vlan 200
+- switchport mode access
+- switchport access vlan 200
 - exit
-
 ---
-
 - interface range fa0/17-24
-- swicthport mode access
-- swicthport access vlan 300
+- switchport mode access
+- switchport access vlan 300
 - exit
-
 ---
-
 - do wr
 
 ### Mode Trunk
-- switchport  trunk allowed vlan 100,200,300
+- switchport trunk allowed vlan 100,200,300
 
 ## 2. KONFIGURASI ROUTER
 - interface fa0/0.100
